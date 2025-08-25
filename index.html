@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Blog Platform - Create Post</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Advanced Blog Platform</h1>
+            <p>Create and share your thoughts!</p>
+            <div class="header-actions">
+                <a href="posts.html" class="view-posts-btn">View All Posts</a>
+                <button id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+            </div>
+        </header>
+        <div class="post-form">
+            <h2>Create a Post</h2>
+            <input type="text" id="postTitle" placeholder="Post title" maxlength="100">
+            <textarea id="postContent" placeholder="What's on your mind?" maxlength="1000"></textarea>
+            <select id="postCategory" aria-label="Select post category">
+                <option value="General">General</option>
+                <option value="Tech">Tech</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="News">News</option>
+            </select>
+            <button onclick="addPost()">Publish</button>
+        </div>
+        <div class="post-list" id="postList"></div>
+    </div>
+    <div class="modal" id="editModal">
+        <div class="modal-content">
+            <h2>Edit Post</h2>
+            <input type="text" id="editTitle" placeholder="Post title" maxlength="100">
+            <textarea id="editContent" placeholder="Post content" maxlength="1000"></textarea>
+            <select id="editCategory" aria-label="Select post category">
+                <option value="General">General</option>
+                <option value="Tech">Tech</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="News">News</option>
+            </select>
+            <div class="modal-buttons">
+                <button onclick="saveEdit()">Save</button>
+                <button onclick="closeModal()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,387 @@
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transition: background 0.3s;
+}
+
+body.dark {
+    background: linear-gradient(135deg, #1f2937, #374151);
+    color: #e5e7eb;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+body.dark .container {
+    background: #1e293b;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark header {
+    background: linear-gradient(90deg, rgba(30, 41, 59, 0.9), rgba(30, 41, 59, 0.7));
+}
+
+header h1 {
+    color: #1e40af;
+    font-size: 2.8em;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+body.dark header h1 {
+    color: #60a5fa;
+}
+
+header p {
+    color: #64748b;
+    font-size: 1.2em;
+    margin: 5px 0 0;
+    flex: 0 0 100%;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+body.dark header p {
+    color: #94a3b8;
+}
+
+.view-posts-btn, .create-post-btn {
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #10b981, #047857);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    transition: transform 0.2s, background 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+}
+
+body.dark .view-posts-btn, body.dark .create-post-btn {
+    background: linear-gradient(90deg, #059669, #034e34);
+}
+
+.view-posts-btn:hover, .create-post-btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(90deg, #059669, #034e34);
+}
+
+#themeToggle {
+    background: none;
+    border: none;
+    font-size: 1.6em;
+    color: #1e40af;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.2s;
+    padding: 5px;
+}
+
+body.dark #themeToggle {
+    color: #60a5fa;
+}
+
+#themeToggle:hover {
+    transform: rotate(15deg);
+    color: #3b82f6;
+}
+
+body.dark #themeToggle:hover {
+    color: #bfdbfe;
+}
+
+.controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+#searchBar, #categoryFilter {
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+    flex: 1;
+    background: #f9fafb;
+    transition: border-color 0.3s, background 0.3s;
+}
+
+body.dark #searchBar, body.dark #categoryFilter {
+    background: #374151;
+    border-color: #4b5563;
+    color: #e5e7eb;
+}
+
+#searchBar:focus, #categoryFilter:focus {
+    border-color: #3b82f6;
+    background: white;
+}
+
+body.dark #searchBar:focus, body.dark #categoryFilter:focus {
+    background: #2d3748;
+}
+
+.post-form {
+    margin-bottom: 40px;
+}
+
+.post-form h2 {
+    color: #1e40af;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+body.dark .post-form h2 {
+    color: #60a5fa;
+}
+
+#postTitle, #postContent, #postCategory, #editTitle, #editContent, #editCategory {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    background: #f9fafb;
+}
+
+body.dark #postTitle, body.dark #postContent, body.dark #postCategory,
+body.dark #editTitle, body.dark #editContent, body.dark #editCategory {
+    background: #374151;
+    border-color: #4b5563;
+    color: #e5e7eb;
+}
+
+#postTitle:focus, #postContent:focus, #postCategory:focus,
+#editTitle:focus, #editContent:focus, #editCategory:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+    outline: none;
+}
+
+#postContent, #editContent {
+    height: 150px;
+    resize: vertical;
+}
+
+button {
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #3b82f6, #1e40af);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: transform 0.2s, background 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(90deg, #1e40af, #1e3a8a);
+}
+
+body.dark button {
+    background: linear-gradient(90deg, #60a5fa, #3b82f6);
+}
+
+body.dark button:hover {
+    background: linear-gradient(90deg, #3b82f6, #1e40af);
+}
+
+.post-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post {
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: slideIn 0.3s ease;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+body.dark .post {
+    background: #2d3748;
+}
+
+.post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.post img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: opacity 0.3s;
+}
+
+.post img:hover {
+    opacity: 0.9;
+}
+
+.post h3 {
+    margin: 10px 0;
+    color: #1e40af;
+    font-weight: 600;
+}
+
+body.dark .post h3 {
+    color: #60a5fa;
+}
+
+.post p {
+    margin: 0 0 10px;
+    color: #334155;
+    line-height: 1.6;
+}
+
+body.dark .post p {
+    color: #d1d5db;
+}
+
+.post-meta {
+    font-size: 12px;
+    color: #64748b;
+    margin-bottom: 10px;
+}
+
+body.dark .post-meta {
+    color: #94a3b8;
+}
+
+.post-actions button {
+    padding: 8px 16px;
+    font-size: 14px;
+    margin-right: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.delete-btn {
+    background: linear-gradient(90deg, #ef4444, #dc2626);
+}
+
+.delete-btn:hover {
+    background: linear-gradient(90deg, #dc2626, #b91c1c);
+}
+
+.edit-btn {
+    background: linear-gradient(90deg, #10b981, #047857);
+}
+
+.edit-btn:hover {
+    background: linear-gradient(90deg, #059669, #034e34);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 600px;
+    width: 90%;
+    animation: fadeIn 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+body.dark .modal-content {
+    background: #1e293b;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+    .view-posts-btn, .create-post-btn {
+        margin-top: 10px;
+        width: 100%;
+        text-align: center;
+    }
+    #themeToggle {
+        margin-top: 10px;
+    }
+    .controls {
+        flex-direction: column;
+    }
+    .post img {
+        height: 150px;
+    }
+}
